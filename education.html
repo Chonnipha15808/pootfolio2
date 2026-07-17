@@ -15,141 +15,132 @@
 
 <style>
 
+/* ใช้ CSS เดียวกับ profile.html */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Prompt',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
 }
 
 
 body{
-
-min-height:100vh;
-
-background:#eadcff;
-
-overflow-x:hidden;
-
+    min-height:100vh;
+    background:#eadcff;
+    overflow-x:hidden;
 }
 
 
-/* พื้นหลัง */
-
 body::before{
 
-content:"";
+    content:"";
 
-position:fixed;
+    position:fixed;
 
-width:350px;
+    width:350px;
 
-height:350px;
+    height:350px;
 
-background:#fbcfe8;
+    background:#fbcfe8;
 
-border-radius:50%;
+    border-radius:50%;
 
-filter:blur(120px);
+    filter:blur(120px);
 
-top:-100px;
+    top:-100px;
 
-left:-100px;
+    left:-100px;
 
 }
 
 
 body::after{
 
-content:"";
+    content:"";
 
-position:fixed;
+    position:fixed;
 
-width:350px;
+    width:350px;
 
-height:350px;
+    height:350px;
 
-background:#c4b5fd;
+    background:#c4b5fd;
 
-border-radius:50%;
+    border-radius:50%;
 
-filter:blur(120px);
+    filter:blur(120px);
 
-bottom:-100px;
+    bottom:-100px;
 
-right:-100px;
+    right:-100px;
 
 }
 
 
 
-/* เมนู */
-
 nav{
 
-position:fixed;
+    position:fixed;
 
-top:20px;
+    top:20px;
 
-left:50%;
+    left:50%;
 
-transform:translateX(-50%);
+    transform:translateX(-50%);
 
-width:90%;
+    width:90%;
 
-padding:18px;
+    padding:18px;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-gap:25px;
+    gap:25px;
 
-background:rgba(255,255,255,.45);
+    background:rgba(255,255,255,.45);
 
-backdrop-filter:blur(15px);
+    backdrop-filter:blur(15px);
 
-border-radius:50px;
+    border-radius:50px;
 
-z-index:10;
+    z-index:10;
 
 }
 
 
 nav a{
 
-text-decoration:none;
+    text-decoration:none;
 
-color:#7c3aed;
+    color:#7c3aed;
 
-font-weight:600;
-
-transition:.3s;
+    font-weight:600;
 
 }
+
 
 
 nav a:hover{
 
-color:#ec4899;
+    color:#ec4899;
 
 }
 
 
 
-/* ดาวตก */
-
 .star{
 
-position:fixed;
+    position:fixed;
 
-top:-40px;
+    top:-40px;
 
-color:white;
+    color:white;
 
-opacity:.45;
+    opacity:.45;
 
-animation:fall linear infinite;
+    animation:fall linear infinite;
 
 }
 
@@ -157,52 +148,46 @@ animation:fall linear infinite;
 @keyframes fall{
 
 from{
-
 transform:translateY(-50px);
-
 }
 
 to{
-
 transform:translateY(110vh);
-
 }
 
 }
 
 
-
-/* กล่อง */
 
 .container{
 
-padding-top:130px;
+    padding-top:130px;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-padding-bottom:50px;
+    padding-bottom:50px;
 
 }
 
 
 
-.education-card{
+.profile-card{
 
-width:800px;
+    width:800px;
 
-padding:40px;
+    padding:40px;
 
-background:rgba(255,255,255,.45);
+    background:rgba(255,255,255,.45);
 
-backdrop-filter:blur(20px);
+    backdrop-filter:blur(20px);
 
-border-radius:35px;
+    border-radius:35px;
 
-box-shadow:0 20px 50px rgba(0,0,0,.15);
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
 
-animation:show 1s;
+    animation:show 1s;
 
 }
 
@@ -230,43 +215,29 @@ transform:translateY(0);
 
 
 
-/* ตัวหนังสือ */
-
 h1{
 
-text-align:center;
+    text-align:center;
 
-margin:25px;
+    margin:25px;
 
-color:#7c3aed;
+    color:#7c3aed;
 
-font-size:45px;
+    font-size:45px;
 
 }
+
 
 
 h2{
 
-margin-top:10px;
+    margin-top:25px;
 
-color:#ec4899;
+    color:#ec4899;
 
-border-bottom:2px solid #ec4899;
+    border-bottom:2px solid #ec4899;
 
-padding-bottom:8px;
-
-}
-
-
-.data{
-
-background:rgba(255,255,255,.5);
-
-padding:20px;
-
-border-radius:20px;
-
-margin-top:20px;
+    padding-bottom:8px;
 
 }
 
@@ -274,13 +245,27 @@ margin-top:20px;
 
 .info{
 
-margin-top:15px;
+    margin-top:15px;
 
-color:#555;
+    color:#555;
 
-font-size:18px;
+    font-size:18px;
 
-line-height:2;
+    line-height:2;
+
+}
+
+
+
+.data{
+
+    background:rgba(255,255,255,.5);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    margin-top:20px;
 
 }
 
@@ -304,7 +289,7 @@ font-size:13px;
 }
 
 
-.education-card{
+.profile-card{
 
 width:90%;
 
@@ -321,13 +306,13 @@ font-size:35px;
 
 }
 
-
 </style>
 
 </head>
 
 
 <body>
+
 
 
 <nav>
@@ -338,25 +323,28 @@ font-size:35px;
 
 <a href="education.html">ประวัติการศึกษา</a>
 
-<a href="grade.html">ผลการเรียน</a>
+<a href="#">ผลการเรียน</a>
 
-<a href="certificate.html">เกียรติบัตร</a>
+<a href="#">เกียรติบัตร</a>
 
-<a href="activity.html">กิจกรรม</a>
+<a href="#">กิจกรรม</a>
 
 </nav>
+
 
 
 
 <div class="container">
 
 
-<div class="education-card">
+<div class="profile-card">
+
 
 
 <h1>
 ประวัติการศึกษา
 </h1>
+
 
 
 
@@ -366,19 +354,21 @@ font-size:35px;
 ระดับประถมศึกษา
 </h2>
 
+
 <p class="info">
 
 โรงเรียน : ....................................
 
 <br>
 
-สำเร็จการศึกษา : ประถมศึกษาปีที่ 6
+ระดับชั้น : ประถมศึกษาปีที่ 6
 
 <br>
 
 ปีการศึกษา : 2563
 
 </p>
+
 
 </div>
 
@@ -391,19 +381,21 @@ font-size:35px;
 ระดับมัธยมศึกษาตอนต้น
 </h2>
 
+
 <p class="info">
 
 โรงเรียน : พานทอง
 
 <br>
 
-สำเร็จการศึกษา : มัธยมศึกษาปีที่ 3
+ระดับชั้น : มัธยมศึกษาปีที่ 3
 
 <br>
 
 ปีการศึกษา : 2566
 
 </p>
+
 
 </div>
 
@@ -415,6 +407,7 @@ font-size:35px;
 <h2>
 ระดับมัธยมศึกษาตอนปลาย
 </h2>
+
 
 <p class="info">
 
@@ -434,6 +427,7 @@ font-size:35px;
 
 </p>
 
+
 </div>
 
 
@@ -442,26 +436,24 @@ font-size:35px;
 <div class="data">
 
 <h2>
-ทักษะและความสนใจ
+เป้าหมายทางการศึกษา
 </h2>
+
 
 <p class="info">
 
-• การออกแบบเว็บไซต์
+• พัฒนาความรู้ด้านคอมพิวเตอร์
 
 <br>
 
-• การใช้งานคอมพิวเตอร์
+• ศึกษาเทคโนโลยีใหม่ ๆ
 
 <br>
 
-• เทคโนโลยีสารสนเทศ
-
-<br>
-
-• การเขียนโปรแกรมเบื้องต้น
+• นำความรู้ไปต่อยอดในการทำงาน
 
 </p>
+
 
 </div>
 
@@ -499,6 +491,7 @@ document.body.appendChild(star);
 
 
 </script>
+
 
 
 </body>
