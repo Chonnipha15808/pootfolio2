@@ -4,11 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Portfolio</title>
-
 
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -16,7 +14,7 @@
 <style>
 
 /* =====================
-   RESET
+ RESET
 ===================== */
 
 *{
@@ -28,7 +26,7 @@
 
 
 /* =====================
-   BACKGROUND
+ BACKGROUND
 ===================== */
 
 body{
@@ -37,19 +35,12 @@ body{
 
     overflow:hidden;
 
-    background:
-
-    linear-gradient(
-        135deg,
-        #ffc1e3,
-        #e8c7ff,
-        #c7d9ff
-    );
+    background:#eadcff;
 
 }
 
 
-/* แสงพื้นหลัง */
+/* แสงพื้นหลังแบบนุ่ม */
 
 body::before{
 
@@ -57,11 +48,11 @@ body::before{
 
     position:absolute;
 
-    width:400px;
+    width:350px;
 
-    height:400px;
+    height:350px;
 
-    background:#ff7eb9;
+    background:#f9a8d4;
 
     border-radius:50%;
 
@@ -84,7 +75,7 @@ body::after{
 
     height:350px;
 
-    background:#a855f7;
+    background:#c4b5fd;
 
     border-radius:50%;
 
@@ -97,8 +88,9 @@ body::after{
 }
 
 
+
 /* =====================
-       MENU
+ NAVBAR
 ===================== */
 
 
@@ -116,6 +108,7 @@ nav{
 
     padding:18px;
 
+
     display:flex;
 
     justify-content:center;
@@ -123,16 +116,17 @@ nav{
     gap:25px;
 
 
-    background:rgba(255,255,255,.35);
+    background:rgba(255,255,255,.45);
 
     backdrop-filter:blur(15px);
 
 
-    border-radius:50px;
+    border-radius:40px;
 
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,.15);
+
+    0 10px 30px rgba(0,0,0,.1);
 
 
     z-index:10;
@@ -143,9 +137,9 @@ nav{
 
 nav a{
 
-    text-decoration:none;
+    color:#7c3aed;
 
-    color:#7e22ce;
+    text-decoration:none;
 
     font-weight:600;
 
@@ -154,19 +148,66 @@ nav a{
 }
 
 
-
 nav a:hover{
 
     color:#ec4899;
-
-    transform:translateY(-5px);
 
 }
 
 
 
 /* =====================
-       HERO
+ ดาวตก
+===================== */
+
+
+.star{
+
+    position:absolute;
+
+    top:-50px;
+
+    color:#ffffff;
+
+    opacity:.45;
+
+    animation:fall linear infinite;
+
+    z-index:1;
+
+}
+
+
+
+@keyframes fall{
+
+
+from{
+
+    transform:
+
+    translateY(-50px)
+    rotate(0deg);
+
+}
+
+
+to{
+
+    transform:
+
+    translateY(110vh)
+    rotate(360deg);
+
+}
+
+
+}
+
+
+
+/* =====================
+ HERO
 ===================== */
 
 
@@ -182,12 +223,14 @@ nav a:hover{
 
     position:relative;
 
+    z-index:2;
+
 }
 
 
 
 /* =====================
-       CARD
+ PROFILE CARD
 ===================== */
 
 
@@ -195,7 +238,6 @@ nav a:hover{
 
 
     width:500px;
-
 
     padding:45px;
 
@@ -205,7 +247,7 @@ nav a:hover{
 
     background:
 
-    rgba(255,255,255,.35);
+    rgba(255,255,255,.45);
 
 
     backdrop-filter:blur(20px);
@@ -214,76 +256,64 @@ nav a:hover{
     border-radius:35px;
 
 
-    border:
-
-    2px solid rgba(255,255,255,.5);
-
-
     box-shadow:
 
-    0 25px 50px rgba(0,0,0,.2);
+    0 20px 50px rgba(0,0,0,.15);
 
 
-    animation:show 1.2s;
-
+    animation:show 1s;
 
 }
 
 
-
-/* animation */
 
 @keyframes show{
 
 
 from{
 
-    opacity:0;
+opacity:0;
 
-    transform:translateY(80px);
+transform:translateY(50px);
 
 }
 
 
 to{
 
-    opacity:1;
+opacity:1;
 
-    transform:translateY(0);
+transform:translateY(0);
 
 }
+
 
 }
 
 
 
 /* =====================
-       PROFILE IMAGE
+ PROFILE IMAGE
 ===================== */
 
 
 .profile{
 
+    width:190px;
 
-    width:200px;
+    height:190px;
 
-    height:200px;
-
+    object-fit:cover;
 
     border-radius:50%;
 
 
-    object-fit:cover;
-
-
-    border:
-
-    8px solid white;
+    border:6px solid white;
 
 
     box-shadow:
 
-    0 0 40px #ff6ec7;
+    0 0 25px #f9a8d4;
 
 
     animation:float 3s infinite;
@@ -297,7 +327,7 @@ to{
 
 50%{
 
-    transform:translateY(-15px);
+transform:translateY(-12px);
 
 }
 
@@ -307,25 +337,17 @@ to{
 
 
 /* =====================
-       TEXT
+ TEXT
 ===================== */
 
 
 h1{
 
-
     margin-top:25px;
-
 
     font-size:60px;
 
-
-    color:#7e22ce;
-
-
-    text-shadow:
-
-    0 5px 20px rgba(0,0,0,.2);
+    color:#7c3aed;
 
 
 }
@@ -334,15 +356,11 @@ h1{
 
 h2{
 
-
     margin-top:10px;
-
-
-    font-size:30px;
-
 
     color:#ec4899;
 
+    font-size:30px;
 
 }
 
@@ -350,32 +368,24 @@ h2{
 
 p{
 
-
     margin:20px;
-
-
-    font-size:18px;
-
 
     color:#555;
 
+    font-size:18px;
 
     line-height:1.8;
-
 
 }
 
 
 
 /* =====================
-       BUTTON
+ BUTTON
 ===================== */
 
 
 button{
-
-
-    margin-top:15px;
 
 
     padding:15px 45px;
@@ -387,13 +397,7 @@ button{
     border-radius:50px;
 
 
-    background:
-
-    linear-gradient(
-    45deg,
-    #ec4899,
-    #a855f7
-    );
+    background:#ec4899;
 
 
     color:white;
@@ -418,54 +422,10 @@ button{
 button:hover{
 
 
-    transform:scale(1.1);
+    background:#8b5cf6;
 
 
-    box-shadow:
-
-    0 10px 30px #ec489966;
-
-
-}
-
-
-
-/* =====================
-       HEART EFFECT
-===================== */
-
-
-.heart{
-
-    position:absolute;
-
-    animation:fall linear infinite;
-
-}
-
-
-
-@keyframes fall{
-
-
-from{
-
-    transform:
-
-    translateY(-100px)
-    rotate(0deg);
-
-}
-
-
-to{
-
-    transform:
-
-    translateY(110vh)
-    rotate(360deg);
-
-}
+    transform:translateY(-5px);
 
 
 }
@@ -473,7 +433,7 @@ to{
 
 
 /* =====================
-       MOBILE
+ MOBILE
 ===================== */
 
 
@@ -482,61 +442,57 @@ to{
 
 nav{
 
-    gap:12px;
+gap:12px;
 
-    flex-wrap:wrap;
+flex-wrap:wrap;
 
 }
 
 
 nav a{
 
-    font-size:13px;
+font-size:13px;
 
 }
-
 
 
 .profile-box{
 
-    width:90%;
+width:90%;
 
-    padding:30px;
+padding:30px;
 
 }
-
 
 
 .profile{
 
-    width:150px;
+width:150px;
 
-    height:150px;
+height:150px;
 
 }
-
 
 
 h1{
 
-    font-size:40px;
+font-size:40px;
 
 }
-
 
 
 h2{
 
-    font-size:22px;
+font-size:22px;
 
 }
 
 
 }
-
 
 
 </style>
+
 
 </head>
 
@@ -544,7 +500,7 @@ h2{
 <body>
 
 
-<!-- MENU -->
+<!-- เมนู -->
 
 <nav>
 
@@ -564,8 +520,8 @@ h2{
 
 
 
+<!-- ดาวตก -->
 
-<!-- COVER -->
 
 
 <section class="hero">
@@ -574,22 +530,17 @@ h2{
 <div class="profile-box">
 
 
-<img src="images/profile.jpg" class="profile" alt="รูปโปรไฟล์">
+<img src="images/profile.jpg" class="profile">
 
 
 <h1>
-
 PORTFOLIO
-
 </h1>
 
 
 <h2>
-
 ชื่อ - นามสกุล
-
 </h2>
-
 
 
 <p>
@@ -598,14 +549,13 @@ PORTFOLIO
 
 <br>
 
-โรงเรียน............................
+โรงเรียน...........................
 
 <br>
 
-แผนการเรียน........................
+แผนการเรียน.....................
 
 </p>
-
 
 
 <button onclick="location.href='profile.html'">
@@ -615,7 +565,6 @@ PORTFOLIO
 </button>
 
 
-
 </div>
 
 
@@ -623,39 +572,40 @@ PORTFOLIO
 
 
 
+
 <script>
 
 
-// สร้างหัวใจลอย
+// สร้างดาวตกแบบจาง ๆ
 
-for(let i=0;i<30;i++){
-
-
-let heart=document.createElement("div");
+for(let i=0;i<35;i++){
 
 
-heart.className="heart";
+let star=document.createElement("div");
 
 
-heart.innerHTML="💗";
+star.className="star";
 
 
-heart.style.left=Math.random()*100+"vw";
+star.innerHTML="✦";
 
 
-heart.style.fontSize=
-(15+Math.random()*25)+"px";
+star.style.left=Math.random()*100+"vw";
 
 
-heart.style.animationDuration=
-(5+Math.random()*5)+"s";
+star.style.fontSize=
+(10+Math.random()*15)+"px";
 
 
-heart.style.animationDelay=
-Math.random()*5+"s";
+star.style.animationDuration=
+(8+Math.random()*8)+"s";
 
 
-document.body.appendChild(heart);
+star.style.animationDelay=
+Math.random()*8+"s";
+
+
+document.body.appendChild(star);
 
 
 }
