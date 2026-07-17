@@ -231,5 +231,422 @@ footer{
 .section-title{
     font-size:32px;
 }
+   <!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:
+    linear-gradient(rgba(10,20,50,.45),rgba(10,20,50,.45)),
+    url("images/background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* พื้นหลังสี */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,#2563eb66,#7c3aed66,#06b6d466);
+}
+
+/* เมนู */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    padding:20px;
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(15px);
+    z-index:999;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffe082;
+}
+
+/* หน้าปก */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* กล่อง */
+
+.card{
+
+    width:480px;
+
+    text-align:center;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+    color:white;
+
+    animation:show 1s;
+
+}
+
+@keyframes show{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.profile{
+
+    width:200px;
+
+    height:200px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:7px solid white;
+
+    box-shadow:0 0 35px #00e5ff;
+
+    transition:.4s;
+
+}
+
+.profile:hover{
+
+transform:scale(1.07) rotate(5deg);
+
+}
+
+h1{
+
+font-size:55px;
+
+margin-top:20px;
+
+}
+
+h2{
+
+margin-top:10px;
+
+color:#ffe082;
+
+}
+
+p{
+
+margin:20px 0 35px;
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+button{
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:#ffffff;
+
+color:#2563eb;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#ffe082;
+
+transform:translateY(-5px);
+
+}
+
+/* รูปตกแต่ง */
+
+.decor{
+
+position:absolute;
+
+animation:float 6s ease-in-out infinite;
+
+}
+
+.decor1{
+
+top:80px;
+
+left:70px;
+
+width:110px;
+
+}
+
+.decor2{
+
+top:120px;
+
+right:80px;
+
+width:100px;
+
+animation-delay:2s;
+
+}
+
+.decor3{
+
+bottom:70px;
+
+left:120px;
+
+width:120px;
+
+animation-delay:1s;
+
+}
+
+.decor4{
+
+bottom:90px;
+
+right:130px;
+
+width:90px;
+
+animation-delay:3s;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-25px);
+
+}
+
+}
+
+/* ดาว */
+
+.star{
+
+position:absolute;
+
+width:6px;
+
+height:6px;
+
+background:white;
+
+border-radius:50%;
+
+animation:blink 2s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:.2;
+
+transform:scale(.5);
+
+}
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+body{
+
+overflow:auto;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+.card{
+
+width:90%;
+
+padding:30px;
+
+}
+
+.profile{
+
+width:160px;
+
+height:160px;
+
+}
+
+h1{
+
+font-size:40px;
+
+}
+
+h2{
+
+font-size:24px;
+
+}
+
+p{
+
+font-size:16px;
+
+}
+
+.decor{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<a href="#">หน้าปก</a>
+
+<a href="#">ประวัติส่วนตัว</a>
+
+<a href="#">การศึกษา</a>
+
+<a href="#">ผลการเรียน</a>
+
+<a href="#">เกียรติบัตร</a>
+
+<a href="#">กิจกรรม</a>
+
+</nav>
+
+<!-- รูปตกแต่ง -->
+<img src="images/book.png" class="decor decor1" alt="">
+<img src="images/star.png" class="decor decor2" alt="">
+<img src="images/graduation.png" class="decor decor3" alt="">
+<img src="images/certificate.png" class="decor decor4" alt="">
+
+<!-- ดาว -->
+<div class="star" style="top:10%;left:15%;"></div>
+<div class="star" style="top:20%;left:80%;"></div>
+<div class="star" style="top:70%;left:10%;"></div>
+<div class="star" style="top:80%;left:90%;"></div>
+<div class="star" style="top:40%;left:30%;"></div>
+<div class="star" style="top:60%;left:70%;"></div>
+
+<section class="hero">
+
+<div class="card">
+
+<img src="images/profile.jpg" class="profile" alt="Profile">
+
+<h1>PORTFOLIO</h1>
+
+<h2>ชื่อ - นามสกุล</h2>
+
+<p>
+นักเรียนชั้นมัธยมศึกษาปีที่ 6<br>
+โรงเรียน................................
+</p>
+
+<button onclick="location.href='profile.html'">
+เข้าสู่ Portfolio
+</button>
+
+</div>
+
+</section>
+
+</body>
+</html>
 
 }
