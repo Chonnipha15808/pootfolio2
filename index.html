@@ -25,6 +25,7 @@
 }
 
 
+
 /* =====================
  BACKGROUND
 ===================== */
@@ -40,48 +41,50 @@ body{
 }
 
 
-/* แสงพื้นหลังแบบนุ่ม */
+
+/* แสงพาสเทล */
 
 body::before{
 
     content:"";
 
-    position:absolute;
+    position:fixed;
 
-    width:350px;
+    width:400px;
 
-    height:350px;
+    height:400px;
 
-    background:#f9a8d4;
+    background:#fbcfe8;
 
     border-radius:50%;
 
     filter:blur(120px);
 
-    top:-100px;
+    top:-150px;
 
     left:-100px;
 
 }
 
 
+
 body::after{
 
     content:"";
 
-    position:absolute;
+    position:fixed;
 
-    width:350px;
+    width:400px;
 
-    height:350px;
+    height:400px;
 
-    background:#c4b5fd;
+    background:#ddd6fe;
 
     border-radius:50%;
 
     filter:blur(120px);
 
-    bottom:-100px;
+    bottom:-150px;
 
     right:-100px;
 
@@ -90,9 +93,8 @@ body::after{
 
 
 /* =====================
- NAVBAR
+ MENU
 ===================== */
-
 
 nav{
 
@@ -104,9 +106,8 @@ nav{
 
     transform:translateX(-50%);
 
-    width:90%;
 
-    padding:18px;
+    width:90%;
 
 
     display:flex;
@@ -116,12 +117,15 @@ nav{
     gap:25px;
 
 
+    padding:18px;
+
+
     background:rgba(255,255,255,.45);
 
     backdrop-filter:blur(15px);
 
 
-    border-radius:40px;
+    border-radius:50px;
 
 
     box-shadow:
@@ -137,15 +141,16 @@ nav{
 
 nav a{
 
-    color:#7c3aed;
-
     text-decoration:none;
+
+    color:#7c3aed;
 
     font-weight:600;
 
     transition:.3s;
 
 }
+
 
 
 nav a:hover{
@@ -163,15 +168,24 @@ nav a:hover{
 
 .star{
 
-    position:absolute;
+    position:fixed;
 
     top:-50px;
 
+
     color:#ffffff;
+
 
     opacity:.45;
 
+
+    text-shadow:
+
+    0 0 8px white;
+
+
     animation:fall linear infinite;
+
 
     z-index:1;
 
@@ -182,7 +196,7 @@ nav a:hover{
 @keyframes fall{
 
 
-from{
+0%{
 
     transform:
 
@@ -192,7 +206,7 @@ from{
 }
 
 
-to{
+100%{
 
     transform:
 
@@ -221,6 +235,7 @@ to{
 
     align-items:center;
 
+
     position:relative;
 
     z-index:2;
@@ -230,7 +245,7 @@ to{
 
 
 /* =====================
- PROFILE CARD
+ PROFILE BOX
 ===================== */
 
 
@@ -238,6 +253,7 @@ to{
 
 
     width:500px;
+
 
     padding:45px;
 
@@ -272,18 +288,18 @@ to{
 
 from{
 
-opacity:0;
+    opacity:0;
 
-transform:translateY(50px);
+    transform:translateY(60px);
 
 }
 
 
 to{
 
-opacity:1;
+    opacity:1;
 
-transform:translateY(0);
+    transform:translateY(0);
 
 }
 
@@ -293,27 +309,31 @@ transform:translateY(0);
 
 
 /* =====================
- PROFILE IMAGE
+ IMAGE
 ===================== */
 
 
 .profile{
 
-    width:190px;
 
-    height:190px;
+    width:200px;
+
+
+    height:200px;
+
 
     object-fit:cover;
+
 
     border-radius:50%;
 
 
-    border:6px solid white;
+    border:7px solid white;
 
 
     box-shadow:
 
-    0 0 25px #f9a8d4;
+    0 0 30px #f472b6;
 
 
     animation:float 3s infinite;
@@ -327,7 +347,7 @@ transform:translateY(0);
 
 50%{
 
-transform:translateY(-12px);
+    transform:translateY(-15px);
 
 }
 
@@ -345,7 +365,9 @@ h1{
 
     margin-top:25px;
 
+
     font-size:60px;
+
 
     color:#7c3aed;
 
@@ -356,11 +378,15 @@ h1{
 
 h2{
 
+
     margin-top:10px;
+
+
+    font-size:30px;
+
 
     color:#ec4899;
 
-    font-size:30px;
 
 }
 
@@ -368,13 +394,18 @@ h2{
 
 p{
 
+
     margin:20px;
+
 
     color:#555;
 
+
     font-size:18px;
 
+
     line-height:1.8;
+
 
 }
 
@@ -397,7 +428,13 @@ button{
     border-radius:50px;
 
 
-    background:#ec4899;
+    background:
+
+    linear-gradient(
+    45deg,
+    #ec4899,
+    #8b5cf6
+    );
 
 
     color:white;
@@ -414,7 +451,6 @@ button{
 
     transition:.3s;
 
-
 }
 
 
@@ -422,10 +458,7 @@ button{
 button:hover{
 
 
-    background:#8b5cf6;
-
-
-    transform:translateY(-5px);
+    transform:translateY(-5px) scale(1.05);
 
 
 }
@@ -442,48 +475,44 @@ button:hover{
 
 nav{
 
-gap:12px;
+    flex-wrap:wrap;
 
-flex-wrap:wrap;
+    gap:12px;
 
 }
 
 
 nav a{
 
-font-size:13px;
+    font-size:13px;
 
 }
+
 
 
 .profile-box{
 
-width:90%;
+    width:90%;
 
-padding:30px;
+    padding:30px;
 
 }
+
 
 
 .profile{
 
-width:150px;
+    width:150px;
 
-height:150px;
+    height:150px;
 
 }
+
 
 
 h1{
 
-font-size:40px;
-
-}
-
-
-h2{
-
-font-size:22px;
+    font-size:40px;
 
 }
 
@@ -497,31 +526,32 @@ font-size:22px;
 </head>
 
 
+
 <body>
 
 
-<!-- เมนู -->
+
+<!-- MENU -->
 
 <nav>
 
 <a href="#">หน้าปก</a>
 
-<a href="profile.html">ประวัติส่วนตัว</a>
+<a href="#">ประวัติส่วนตัว</a>
 
-<a href="education.html">การศึกษา</a>
+<a href="#">การศึกษา</a>
 
-<a href="grades.html">ผลการเรียน</a>
+<a href="#">ผลการเรียน</a>
 
-<a href="certificates.html">เกียรติบัตร</a>
+<a href="#">เกียรติบัตร</a>
 
-<a href="activities.html">กิจกรรม</a>
+<a href="#">กิจกรรม</a>
 
 </nav>
 
 
 
-<!-- ดาวตก -->
-
+<!-- หน้าปก -->
 
 
 <section class="hero">
@@ -530,16 +560,19 @@ font-size:22px;
 <div class="profile-box">
 
 
-<img src="images/profile.jpg" class="profile">
+<img src="images/profile.jpg" class="profile" alt="รูปโปรไฟล์">
 
 
 <h1>
+
 PORTFOLIO
+
 </h1>
 
 
 <h2>
-ชื่อ - นามสกุล
+
+นางสาวชลนิภา เเก้วเจริญ
 </h2>
 
 
@@ -549,13 +582,14 @@ PORTFOLIO
 
 <br>
 
-โรงเรียน...........................
+โรงเรียนพานทอง
 
 <br>
 
-แผนการเรียน.....................
+แผนการเรียน วิทยาศาสตร์-คณิตศาสตร์
 
 </p>
+
 
 
 <button onclick="location.href='profile.html'">
@@ -572,13 +606,15 @@ PORTFOLIO
 
 
 
-
 <script>
 
 
-// สร้างดาวตกแบบจาง ๆ
+// =====================
+// สร้างดาวตก
+// =====================
 
-for(let i=0;i<35;i++){
+
+for(let i=0;i<60;i++){
 
 
 let star=document.createElement("div");
@@ -590,19 +626,20 @@ star.className="star";
 star.innerHTML="✦";
 
 
-star.style.left=Math.random()*100+"vw";
+star.style.left=
+Math.random()*100+"vw";
 
 
 star.style.fontSize=
-(10+Math.random()*15)+"px";
+(10+Math.random()*18)+"px";
 
 
 star.style.animationDuration=
-(8+Math.random()*8)+"s";
+(6+Math.random()*10)+"s";
 
 
 star.style.animationDelay=
-Math.random()*8+"s";
+Math.random()*10+"s";
 
 
 document.body.appendChild(star);
@@ -612,6 +649,7 @@ document.body.appendChild(star);
 
 
 </script>
+
 
 
 </body>
