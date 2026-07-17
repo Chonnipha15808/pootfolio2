@@ -1,43 +1,669 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =====================
+   RESET
+===================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
+}
+
+
+/* =====================
+   BACKGROUND
+===================== */
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffc1e3,
+        #e8c7ff,
+        #c7d9ff
+    );
+
+}
+
+
+/* แสงพื้นหลัง */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+
+    height:400px;
+
+    background:#ff7eb9;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    top:-100px;
+
+    left:-100px;
+
+}
+
+
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:#a855f7;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    bottom:-100px;
+
+    right:-100px;
+
+}
+
+
+/* =====================
+       MENU
+===================== */
+
+
+nav{
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+
+    background:rgba(255,255,255,.35);
+
+    backdrop-filter:blur(15px);
+
+
+    border-radius:50px;
+
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+
+
+    z-index:10;
+
+}
+
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:#7e22ce;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+nav a:hover{
+
+    color:#ec4899;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* =====================
+       HERO
+===================== */
+
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+
+
+/* =====================
+       CARD
+===================== */
+
+
+.profile-box{
+
+
+    width:500px;
+
+
+    padding:45px;
+
+
+    text-align:center;
+
+
+    background:
+
+    rgba(255,255,255,.35);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:35px;
+
+
+    border:
+
+    2px solid rgba(255,255,255,.5);
+
+
+    box-shadow:
+
+    0 25px 50px rgba(0,0,0,.2);
+
+
+    animation:show 1.2s;
+
+
+}
+
+
+
+/* animation */
+
+@keyframes show{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+/* =====================
+       PROFILE IMAGE
+===================== */
+
+
+.profile{
+
+
+    width:200px;
+
+    height:200px;
+
+
+    border-radius:50%;
+
+
+    object-fit:cover;
+
+
+    border:
+
+    8px solid white;
+
+
+    box-shadow:
+
+    0 0 40px #ff6ec7;
+
+
+    animation:float 3s infinite;
+
+}
+
+
+
+@keyframes float{
+
+
+50%{
+
+    transform:translateY(-15px);
+
+}
+
+
+}
+
+
+
+/* =====================
+       TEXT
+===================== */
+
+
+h1{
+
+
+    margin-top:25px;
+
+
+    font-size:60px;
+
+
+    color:#7e22ce;
+
+
+    text-shadow:
+
+    0 5px 20px rgba(0,0,0,.2);
+
+
+}
+
+
+
+h2{
+
+
+    margin-top:10px;
+
+
+    font-size:30px;
+
+
+    color:#ec4899;
+
+
+}
+
+
+
+p{
+
+
+    margin:20px;
+
+
+    font-size:18px;
+
+
+    color:#555;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+/* =====================
+       BUTTON
+===================== */
+
+
+button{
+
+
+    margin-top:15px;
+
+
+    padding:15px 45px;
+
+
+    border:none;
+
+
+    border-radius:50px;
+
+
+    background:
+
+    linear-gradient(
+    45deg,
+    #ec4899,
+    #a855f7
+    );
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+button:hover{
+
+
+    transform:scale(1.1);
+
+
+    box-shadow:
+
+    0 10px 30px #ec489966;
+
+
+}
+
+
+
+/* =====================
+       HEART EFFECT
+===================== */
+
+
+.heart{
+
+    position:absolute;
+
+    animation:fall linear infinite;
+
+}
+
+
+
+@keyframes fall{
+
+
+from{
+
+    transform:
+
+    translateY(-100px)
+    rotate(0deg);
+
+}
+
+
+to{
+
+    transform:
+
+    translateY(110vh)
+    rotate(360deg);
+
+}
+
+
+}
+
+
+
+/* =====================
+       MOBILE
+===================== */
+
+
+@media(max-width:700px){
+
+
+nav{
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+
+nav a{
+
+    font-size:13px;
+
+}
+
+
+
+.profile-box{
+
+    width:90%;
+
+    padding:30px;
+
+}
+
+
+
+.profile{
+
+    width:150px;
+
+    height:150px;
+
+}
+
+
+
+h1{
+
+    font-size:40px;
+
+}
+
+
+
+h2{
+
+    font-size:22px;
+
+}
+
+
+}
+
+
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- MENU -->
+
 <nav>
-    <a href="#">หน้าปก</a>
-    <a href="#">ประวัติ</a>
-    <a href="#">การศึกษา</a>
-    <a href="#">เกียรติบัตร</a>
-    <a href="#">กิจกรรม</a>
+
+<a href="#">หน้าปก</a>
+
+<a href="profile.html">ประวัติส่วนตัว</a>
+
+<a href="education.html">การศึกษา</a>
+
+<a href="grades.html">ผลการเรียน</a>
+
+<a href="certificates.html">เกียรติบัตร</a>
+
+<a href="activities.html">กิจกรรม</a>
+
 </nav>
 
-<div class="hero">
 
-<div class="card">
 
-<img src="images/profile.jpg" class="profile">
 
-<h1>PORTFOLIO</h1>
+<!-- COVER -->
 
-<h2>ชลนิภา แก้วเจริญ</h2>
 
-<p>นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
+<section class="hero">
 
-<button>เข้าสู่ Portfolio</button>
+
+<div class="profile-box">
+
+
+<img src="images/profile.jpg" class="profile" alt="รูปโปรไฟล์">
+
+
+<h1>
+
+PORTFOLIO
+
+</h1>
+
+
+<h2>
+
+ชื่อ - นามสกุล
+
+</h2>
+
+
+
+<p>
+
+นักเรียนชั้นมัธยมศึกษาปีที่ 6
+
+<br>
+
+โรงเรียน............................
+
+<br>
+
+แผนการเรียน........................
+
+</p>
+
+
+
+<button onclick="location.href='profile.html'">
+
+เข้าสู่ Portfolio
+
+</button>
+
+
 
 </div>
 
-</div>
 
-<script src="script.js"></script>
+</section>
+
+
+
+<script>
+
+
+// สร้างหัวใจลอย
+
+for(let i=0;i<30;i++){
+
+
+let heart=document.createElement("div");
+
+
+heart.className="heart";
+
+
+heart.innerHTML="💗";
+
+
+heart.style.left=Math.random()*100+"vw";
+
+
+heart.style.fontSize=
+(15+Math.random()*25)+"px";
+
+
+heart.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+
+heart.style.animationDelay=
+Math.random()*5+"s";
+
+
+document.body.appendChild(heart);
+
+
+}
+
+
+</script>
+
 
 </body>
+
 </html>
