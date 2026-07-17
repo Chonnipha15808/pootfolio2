@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ประวัติส่วนตัว</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    background:#eadcff;
+
+    overflow-x:hidden;
+
+}
+
+
+/* พื้นหลัง */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+
+    height:350px;
+
+    background:#fbcfe8;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    top:-100px;
+
+    left:-100px;
+
+}
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+
+    height:350px;
+
+    background:#c4b5fd;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    bottom:-100px;
+
+    right:-100px;
+
+}
+
+
+/* เมนู */
+
+nav{
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:50px;
+
+    z-index:10;
+
+}
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:#7c3aed;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    color:#ec4899;
+
+}
+
+
+/* ดาวตก */
+
+.star{
+
+    position:fixed;
+
+    top:-40px;
+
+    color:white;
+
+    opacity:.45;
+
+    animation:fall linear infinite;
+
+}
+
+
+@keyframes fall{
+
+from{
+
+transform:translateY(-50px);
+
+}
+
+to{
+
+transform:translateY(110vh);
+
+}
+
+}
+
+
+
+/* เนื้อหา */
+
+.container{
+
+    padding-top:130px;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding-bottom:50px;
+
+}
+
+
+
+/* กล่องประวัติ */
+
+.profile-card{
+
+    width:800px;
+
+    padding:40px;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:35px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+
+    animation:show 1s;
+
+}
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* รูป */
+
+.profile-img{
+
+    display:block;
+
+    margin:auto;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:7px solid white;
+
+    box-shadow:0 0 30px #f472b6;
+
+}
+
+
+
+/* หัวข้อ */
+
+h1{
+
+    text-align:center;
+
+    margin:25px;
+
+    color:#7c3aed;
+
+    font-size:45px;
+
+}
+
+
+h2{
+
+    margin-top:25px;
+
+    color:#ec4899;
+
+    border-bottom:2px solid #ec4899;
+
+    padding-bottom:8px;
+
+}
+
+
+
+.info{
+
+    margin-top:15px;
+
+    color:#555;
+
+    font-size:18px;
+
+    line-height:2;
+
+}
+
+
+
+/* กล่องข้อมูล */
+
+.data{
+
+    background:rgba(255,255,255,.5);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    margin-top:20px;
+
+}
+
+
+
+.data p{
+
+    margin:8px;
+
+}
+
+
+
+/* มือถือ */
+
+@media(max-width:700px){
+
+
+nav{
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+
+nav a{
+
+    font-size:13px;
+
+}
+
+
+.profile-card{
+
+    width:90%;
+
+    padding:25px;
+
+}
+
+
+h1{
+
+    font-size:35px;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<nav>
+
+<a href="index.html">หน้าปก</a>
+
+<a href="profile.html">ประวัติส่วนตัว</a>
+
+<a href="#">การศึกษา</a>
+
+<a href="#">ผลการเรียน</a>
+
+<a href="#">เกียรติบัตร</a>
+
+<a href="#">กิจกรรม</a>
+
+</nav>
+
+
+
+<div class="container">
+
+
+<div class="profile-card">
+
+
+<img src="images/profile.jpg" class="profile-img">
+
+
+<h1>
+ประวัติส่วนตัว
+</h1>
+
+
+
+<div class="data">
+
+
+<h2>
+ข้อมูลส่วนตัว
+</h2>
+
+
+<p class="info">
+
+ชื่อ : นายชื่อ นามสกุล
+
+<br>
+
+ชื่อเล่น : ....................
+
+<br>
+
+วันเกิด : ....................
+
+<br>
+
+อายุ : ........ ปี
+
+<br>
+
+สัญชาติ : ไทย
+
+<br>
+
+ศาสนา : ................
+
+</p>
+
+
+</div>
+
+
+
+<div class="data">
+
+
+<h2>
+ข้อมูลการศึกษา
+</h2>
+
+
+<p class="info">
+
+ระดับชั้น : มัธยมศึกษาปีที่ 6
+
+<br>
+
+โรงเรียน : ........................
+
+<br>
+
+แผนการเรียน : ....................
+
+</p>
+
+
+</div>
+
+
+
+<div class="data">
+
+
+<h2>
+ความสามารถพิเศษ
+</h2>
+
+
+<p class="info">
+
+• ด้านคอมพิวเตอร์
+
+<br>
+
+• การออกแบบเว็บไซต์
+
+<br>
+
+• การทำงานเป็นทีม
+
+</p>
+
+
+</div>
+
+
+
+<div class="data">
+
+
+<h2>
+งานอดิเรก
+</h2>
+
+
+<p class="info">
+
+• ฟังเพลง
+
+<br>
+
+• อ่านหนังสือ
+
+<br>
+
+• ศึกษาเทคโนโลยีใหม่ ๆ
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+<script>
+
+
+// ดาวตก
+
+for(let i=0;i<40;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.innerHTML="✦";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.fontSize=(10+Math.random()*15)+"px";
+
+star.style.animationDuration=(7+Math.random()*8)+"s";
+
+star.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(star);
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
