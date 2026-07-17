@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="th">
 
@@ -13,8 +14,6 @@
 
 <style>
 
-/* RESET */
-
 *{
     margin:0;
     padding:0;
@@ -22,8 +21,6 @@
     font-family:'Prompt',sans-serif;
 }
 
-
-/* BACKGROUND */
 
 body{
 
@@ -35,6 +32,8 @@ body{
 
 }
 
+
+/* พื้นหลัง */
 
 body::before{
 
@@ -83,7 +82,7 @@ body::after{
 
 
 
-/* MENU */
+/* เมนู */
 
 nav{
 
@@ -99,37 +98,30 @@ nav{
 
     padding:18px;
 
-
     display:flex;
 
     justify-content:center;
 
     gap:25px;
 
-
     background:rgba(255,255,255,.45);
 
     backdrop-filter:blur(15px);
 
-
     border-radius:50px;
-
 
     z-index:10;
 
 }
 
 
-
 nav a{
-
-    text-decoration:none;
 
     color:#7c3aed;
 
-    font-weight:600;
+    text-decoration:none;
 
-    transition:.3s;
+    font-weight:600;
 
 }
 
@@ -148,28 +140,29 @@ nav a:hover{
 
     position:fixed;
 
-    top:-40px;
+    top:-50px;
 
     color:white;
 
-    opacity:.45;
+    opacity:.5;
 
     animation:fall linear infinite;
 
 }
 
 
+
 @keyframes fall{
 
 from{
 
-    transform:translateY(-50px);
+transform:translateY(-50px);
 
 }
 
 to{
 
-    transform:translateY(110vh);
+transform:translateY(110vh);
 
 }
 
@@ -177,18 +170,17 @@ to{
 
 
 
-/* CONTENT */
-
+/* กล่องหลัก */
 
 .container{
 
     padding-top:130px;
 
-    padding-bottom:50px;
-
     display:flex;
 
     justify-content:center;
+
+    padding-bottom:50px;
 
 }
 
@@ -196,57 +188,20 @@ to{
 
 .education-card{
 
-
     width:850px;
-
 
     padding:45px;
 
-
     background:rgba(255,255,255,.45);
-
 
     backdrop-filter:blur(20px);
 
-
     border-radius:35px;
 
-
-    box-shadow:
-
-    0 20px 50px rgba(0,0,0,.15);
-
-
-    animation:show 1s;
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
 
 }
 
-
-
-@keyframes show{
-
-from{
-
-    opacity:0;
-
-    transform:translateY(50px);
-
-}
-
-
-to{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-}
-
-
-
-/* TITLE */
 
 
 h1{
@@ -263,93 +218,27 @@ h1{
 
 
 
-/* TIMELINE */
+/* การ์ดการศึกษา */
 
-
-.timeline{
-
-    position:relative;
-
-}
-
-
-
-.timeline::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:20px;
-
-    top:0;
-
-    width:5px;
-
-    height:100%;
-
-    background:#ec4899;
-
-}
-
-
-
-.item{
-
-    position:relative;
-
-    margin-bottom:35px;
-
-    padding-left:65px;
-
-}
-
-
-
-.item::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:5px;
-
-    top:20px;
-
-    width:30px;
-
-    height:30px;
-
-    background:white;
-
-    border:6px solid #ec4899;
-
-    border-radius:50%;
-
-}
-
-
-
-.box{
-
+.study{
 
     background:rgba(255,255,255,.6);
 
-
     padding:25px;
-
 
     border-radius:25px;
 
+    margin-bottom:25px;
+
+    border-left:8px solid #ec4899;
 
     transition:.3s;
-
 
 }
 
 
 
-.box:hover{
+.study:hover{
 
     transform:translateY(-8px);
 
@@ -357,7 +246,7 @@ h1{
 
 
 
-.box h2{
+.study h2{
 
     color:#ec4899;
 
@@ -367,7 +256,7 @@ h1{
 
 
 
-.box p{
+.study p{
 
     color:#555;
 
@@ -379,10 +268,9 @@ h1{
 
 
 
-/* MOBILE */
+/* มือถือ */
 
 @media(max-width:700px){
-
 
 nav{
 
@@ -415,15 +303,8 @@ h1{
 
 }
 
-
-.box p{
-
-    font-size:16px;
-
 }
 
-
-}
 
 </style>
 
@@ -432,8 +313,6 @@ h1{
 
 <body>
 
-
-<!-- MENU -->
 
 <nav>
 
@@ -453,9 +332,6 @@ h1{
 
 
 
-<!-- CONTENT -->
-
-
 <div class="container">
 
 
@@ -468,13 +344,7 @@ h1{
 
 
 
-<div class="timeline">
-
-
-
-<div class="item">
-
-<div class="box">
+<div class="study">
 
 <h2>
 ระดับประถมศึกษา
@@ -482,33 +352,28 @@ h1{
 
 <p>
 
+โรงเรียน : ....................................
+
+<br>
+
 ปีการศึกษา : 20xx - 20xx
 
 <br>
 
-โรงเรียน : ใส่ชื่อโรงเรียน
+จังหวัด : ..................................
 
 <br>
 
-จังหวัด : ใส่จังหวัด
-
-<br>
-
-ผลการเรียน : ใส่เกรดเฉลี่ย
+เกรดเฉลี่ย : ............................
 
 </p>
 
 </div>
 
-</div>
 
 
 
-
-
-<div class="item">
-
-<div class="box">
+<div class="study">
 
 <h2>
 ระดับมัธยมศึกษาตอนต้น
@@ -516,33 +381,29 @@ h1{
 
 <p>
 
+โรงเรียน : ....................................
+
+<br>
+
 ปีการศึกษา : 20xx - 20xx
 
 <br>
 
-โรงเรียน : ใส่ชื่อโรงเรียน
+จังหวัด : ..................................
 
 <br>
 
-จังหวัด : ใส่จังหวัด
-
-<br>
-
-ผลการเรียน : ใส่เกรดเฉลี่ย
+เกรดเฉลี่ย : ............................
 
 </p>
 
 </div>
 
-</div>
 
 
 
 
-
-<div class="item">
-
-<div class="box">
+<div class="study">
 
 <h2>
 ระดับมัธยมศึกษาตอนปลาย
@@ -550,11 +411,7 @@ h1{
 
 <p>
 
-ปีการศึกษา : 20xx - ปัจจุบัน
-
-<br>
-
-โรงเรียน : ใส่ชื่อโรงเรียน
+โรงเรียน : ....................................
 
 <br>
 
@@ -562,34 +419,27 @@ h1{
 
 <br>
 
-แผนการเรียน : ใส่แผนการเรียน
+แผนการเรียน : ............................
 
 <br>
 
-เกรดเฉลี่ยสะสม : ใส่ GPA
+เกรดเฉลี่ยสะสม : ......................
 
 </p>
 
 </div>
 
-</div>
-
-
-
-</div>
 
 
 </div>
 
-
 </div>
-
 
 
 
 <script>
 
-// สร้างดาวตก
+// ดาวตก
 
 for(let i=0;i<50;i++){
 
@@ -612,7 +462,6 @@ document.body.appendChild(star);
 }
 
 </script>
-
 
 
 </body>
