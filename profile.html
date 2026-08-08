@@ -9,9 +9,7 @@
 
 <title>ประวัติส่วนตัว</title>
 
-
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 
 <style>
 
@@ -22,342 +20,214 @@
     font-family:'Prompt',sans-serif;
 }
 
-
 body{
-
     min-height:100vh;
-
     background:#eadcff;
-
     overflow-x:hidden;
-
 }
-
 
 /* พื้นหลัง */
 
 body::before{
-
     content:"";
-
     position:fixed;
-
     width:350px;
-
     height:350px;
-
     background:#fbcfe8;
-
     border-radius:50%;
-
     filter:blur(120px);
-
     top:-100px;
-
     left:-100px;
-
 }
-
 
 body::after{
-
     content:"";
-
     position:fixed;
-
     width:350px;
-
     height:350px;
-
     background:#c4b5fd;
-
     border-radius:50%;
-
     filter:blur(120px);
-
     bottom:-100px;
-
     right:-100px;
-
 }
-
 
 /* เมนู */
 
 nav{
-
     position:fixed;
-
     top:20px;
-
     left:50%;
-
     transform:translateX(-50%);
-
     width:90%;
-
     padding:18px;
-
     display:flex;
-
     justify-content:center;
-
     gap:25px;
-
     background:rgba(255,255,255,.45);
-
     backdrop-filter:blur(15px);
-
     border-radius:50px;
-
     z-index:10;
-
 }
-
 
 nav a{
-
     text-decoration:none;
-
     color:#7c3aed;
-
     font-weight:600;
-
     transition:.3s;
-
 }
-
 
 nav a:hover{
-
     color:#ec4899;
-
 }
-
 
 /* ดาวตก */
 
 .star{
-
     position:fixed;
-
     top:-40px;
-
     color:white;
-
     opacity:.45;
-
     animation:fall linear infinite;
-
 }
-
 
 @keyframes fall{
 
-from{
+    from{
+        transform:translateY(-50px);
+    }
 
-transform:translateY(-50px);
-
-}
-
-to{
-
-transform:translateY(110vh);
+    to{
+        transform:translateY(110vh);
+    }
 
 }
-
-}
-
-
 
 /* เนื้อหา */
 
 .container{
-
     padding-top:130px;
-
     display:flex;
-
     justify-content:center;
-
     padding-bottom:50px;
-
 }
-
-
 
 /* กล่องประวัติ */
 
 .profile-card{
-
     width:800px;
-
     padding:40px;
-
     background:rgba(255,255,255,.45);
-
     backdrop-filter:blur(20px);
-
     border-radius:35px;
-
     box-shadow:0 20px 50px rgba(0,0,0,.15);
-
     animation:show 1s;
-
 }
-
 
 @keyframes show{
 
-from{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
 
-opacity:0;
-
-transform:translateY(50px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 
 }
-
-}
-
 
 /* รูป */
 
 .profile-img{
-
     display:block;
-
     margin:auto;
-
     width:180px;
-
     height:180px;
-
     border-radius:50%;
-
     object-fit:cover;
-
     border:7px solid white;
-
     box-shadow:0 0 30px #f472b6;
-
 }
-
-
 
 /* หัวข้อ */
 
 h1{
-
     text-align:center;
-
     margin:25px;
-
     color:#7c3aed;
-
     font-size:45px;
-
 }
-
 
 h2{
-
     margin-top:25px;
-
     color:#ec4899;
-
     border-bottom:2px solid #ec4899;
-
     padding-bottom:8px;
-
 }
-
-
 
 .info{
-
     margin-top:15px;
-
     color:#555;
-
     font-size:18px;
-
     line-height:2;
-
 }
-
-
 
 /* กล่องข้อมูล */
 
 .data{
-
     background:rgba(255,255,255,.5);
-
     padding:20px;
-
     border-radius:20px;
-
     margin-top:20px;
-
 }
-
-
 
 .data p{
-
     margin:8px;
-
 }
 
+/* ลิงก์ข้อมูลติดต่อ */
 
+.contact-link{
+    color:#7c3aed;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.contact-link:hover{
+    color:#ec4899;
+    text-decoration:underline;
+}
 
 /* มือถือ */
 
 @media(max-width:700px){
 
+    nav{
+        flex-wrap:wrap;
+        gap:10px;
+    }
 
-nav{
+    nav a{
+        font-size:13px;
+    }
 
-    flex-wrap:wrap;
+    .profile-card{
+        width:90%;
+        padding:25px;
+    }
 
-    gap:10px;
+    h1{
+        font-size:35px;
+    }
 
-}
-
-
-nav a{
-
-    font-size:13px;
-
-}
-
-
-.profile-card{
-
-    width:90%;
-
-    padding:25px;
-
-}
-
-
-h1{
-
-    font-size:35px;
+    .info{
+        font-size:16px;
+    }
 
 }
-
-
-}
-
 
 </style>
 
@@ -367,194 +237,227 @@ h1{
 <body>
 
 
+<!-- เมนู -->
 
 <nav>
 
-<a href="index.html">หน้าปก</a>
+    <a href="index.html">หน้าปก</a>
 
-<a href="profile.html">ประวัติส่วนตัว</a>
+    <a href="profile.html">ประวัติส่วนตัว</a>
 
-<a href="education.html">ประวัติการศึกษา</a>
+    <a href="education.html">ประวัติการศึกษา</a>
 
-<a href="#">ผลการเรียน</a>
+    <a href="#">ผลการเรียน</a>
 
-<a href="#">เกียรติบัตร</a>
+    <a href="#">เกียรติบัตร</a>
 
-<a href="#">กิจกรรม</a>
+    <a href="#">กิจกรรม</a>
 
 </nav>
 
 
+<!-- เนื้อหา -->
 
 <div class="container">
 
-
-<div class="profile-card">
-
-
-<img src="images/1783692782026.jpg" class="profile-img">
+    <div class="profile-card">
 
 
-<h1>
-ประวัติส่วนตัว
-</h1>
+        <!-- รูปโปรไฟล์ -->
+
+        <img src="images/1783692782026.jpg" class="profile-img">
 
 
+        <!-- หัวข้อ -->
 
-<div class="data">
-
-
-<h2>
-ข้อมูลส่วนตัว
-</h2>
+        <h1>
+            ประวัติส่วนตัว
+        </h1>
 
 
-<p class="info">
+        <!-- ข้อมูลส่วนตัว -->
 
-ชื่อ : นางสาวชลนิภา แก้วเจริญ
+        <div class="data">
 
-<br>
+            <h2>
+                ข้อมูลส่วนตัว
+            </h2>
 
-ชื่อเล่น : อั้ม
+            <p class="info">
 
-<br>
+                ชื่อ : นางสาวชลนิภา แก้วเจริญ
 
-วันเกิด :31สิงหาคม2551
-<br>
+                <br>
 
-อายุ : 18 ปี
+                ชื่อเล่น : อั้ม
 
-<br>
+                <br>
 
-สัญชาติ : ไทย
+                วันเกิด : 31 สิงหาคม 2551
 
-<br>
+                <br>
 
-ศาสนา : พุทธ
+                อายุ : 18 ปี
 
-</p>
+                <br>
 
+                สัญชาติ : ไทย
+
+                <br>
+
+                ศาสนา : พุทธ
+
+            </p>
+
+        </div>
+
+
+        <!-- ข้อมูลการศึกษา -->
+
+        <div class="data">
+
+            <h2>
+                ข้อมูลการศึกษา
+            </h2>
+
+            <p class="info">
+
+                ระดับชั้น : มัธยมศึกษาปีที่ 6
+
+                <br>
+
+                โรงเรียน : พานทอง
+
+                <br>
+
+                แผนการเรียน : วิทยาศาสตร์-คณิตศาสตร์
+
+            </p>
+
+        </div>
+
+
+        <!-- ความสามารถพิเศษ -->
+
+        <div class="data">
+
+            <h2>
+                ความสามารถพิเศษ
+            </h2>
+
+            <p class="info">
+
+                • ด้านคอมพิวเตอร์
+
+                <br>
+
+                • การออกแบบเว็บไซต์
+
+                <br>
+
+                • การทำงานเป็นทีม
+
+            </p>
+
+        </div>
+
+
+        <!-- งานอดิเรก -->
+
+        <div class="data">
+
+            <h2>
+                งานอดิเรก
+            </h2>
+
+            <p class="info">
+
+                • ฟังเพลง
+
+                <br>
+
+                • อ่านหนังสือ
+
+                <br>
+
+                • ศึกษาเทคโนโลยีใหม่ ๆ
+
+            </p>
+
+        </div>
+
+
+        <!-- ข้อมูลการติดต่อ -->
+
+        <div class="data">
+
+            <h2>
+                ข้อมูลการติดต่อ
+            </h2>
+
+            <p class="info">
+
+                📞 เบอร์โทรศัพท์ :
+                <a href="tel:0931211439" class="contact-link">
+                    0931211439
+                </a>
+
+                <br>
+
+                📧 อีเมล :
+                <a href="mailto:your-email@example.com" class="contact-link">
+                    your-email@example.com
+                </a>
+
+                <br>
+
+                📘 Facebook :
+                <a href="https://www.facebook.com/" target="_blank" class="contact-link">
+                    Facebook ของฉัน
+                </a>
+
+                <br>
+
+                📷 Instagram :
+                <a href="https://www.instagram.com/" target="_blank" class="contact-link">
+                    @instagram
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </div>
 
 </div>
 
 
-
-<div class="data">
-
-
-<h2>
-ข้อมูลการศึกษา
-</h2>
-
-
-<p class="info">
-
-ระดับชั้น : มัธยมศึกษาปีที่ 6
-
-<br>
-
-โรงเรียน : พานทอง
-
-<br>
-
-แผนการเรียน : วิทยาศาสต์-คณิตศาตส์
-
-</p>
-
-
-</div>
-
-
-
-<div class="data">
-
-
-<h2>
-ความสามารถพิเศษ
-</h2>
-
-
-<p class="info">
-
-• ด้านคอมพิวเตอร์
-
-<br>
-
-• การออกแบบเว็บไซต์
-
-<br>
-
-• การทำงานเป็นทีม
-
-</p>
-
-
-</div>
-
-
-
-<div class="data">
-
-
-<h2>
-งานอดิเรก
-</h2>
-
-
-<p class="info">
-
-• ฟังเพลง
-
-<br>
-
-• อ่านหนังสือ
-
-<br>
-
-• ศึกษาเทคโนโลยีใหม่ ๆ
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-</div>
-
-
-
+<!-- ดาวตก -->
 
 <script>
 
+for(let i=0; i<40; i++){
 
-// ดาวตก
+    let star = document.createElement("div");
 
-for(let i=0;i<40;i++){
+    star.className = "star";
 
-let star=document.createElement("div");
+    star.innerHTML = "✦";
 
-star.className="star";
+    star.style.left = Math.random() * 100 + "vw";
 
-star.innerHTML="✦";
+    star.style.fontSize = (10 + Math.random() * 15) + "px";
 
-star.style.left=Math.random()*100+"vw";
+    star.style.animationDuration = (7 + Math.random() * 8) + "s";
 
-star.style.fontSize=(10+Math.random()*15)+"px";
+    star.style.animationDelay = Math.random() * 5 + "s";
 
-star.style.animationDuration=(7+Math.random()*8)+"s";
-
-star.style.animationDelay=Math.random()*5+"s";
-
-document.body.appendChild(star);
+    document.body.appendChild(star);
 
 }
 
-
 </script>
-
 
 
 </body>
